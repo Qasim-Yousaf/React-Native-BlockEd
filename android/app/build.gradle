@@ -136,6 +136,7 @@ android {
         applicationId "com.blocked"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
+        multiDexEnabled true
         versionCode 1
         versionName "1.0"
     }

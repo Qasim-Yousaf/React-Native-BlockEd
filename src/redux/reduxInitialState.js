@@ -1,0 +1,30 @@
+// redux store
+
+export const ReduxInitialState = {
+  social1FirstName: "",
+  social1LastName: "",
+  social1Email: "",
+  phoneNumber: "",
+  authToken: "",
+  roleId: "",
+  password: "",
+  preferedLanguage: "english",
+  profile: {
+    "firstName": '',
+    "lastName": '',
+    "gender": '',
+    "dob": '',
+    "country": '',
+    "address": '',
+    "city": '',
+    "ownCar": '',
+    "maritalStatus": '',
+    "photo": '',
+  },
+  companyName: '',
+  address: '', 
+  emailAddress: '',
+  establishmentYear: '',
+  bankInfo: '',
+  companyName: '',
+};
