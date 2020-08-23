@@ -16,6 +16,10 @@ import Constants from "../../common/Constants.json";
 
 const CreateAccount = ({ navigation }) => {
 
+  function CreateAccountasStudent() {
+    navigation.push("CreateAccountasStudent");
+  }
+
   // useEffect(async () => {
   //   let roleId = await AsyncStorage.getCustomerRoleId()
   //   ToastAndroid.show(roleId, ToastAndroid.SHORT)
@@ -69,7 +73,7 @@ const CreateAccount = ({ navigation }) => {
       </View>
 
       <View>
-        <TouchableOpacity onPress={()=>{onPressUserType(Constants.roleTypes.CUSTOMER)}} style={{ marginTop: 20, }}>
+        <TouchableOpacity onPress={CreateAccountasStudent} style={{ marginTop: 20, }}>
           <Image source={ImageAsStudentButton} resizeMode="stretch" />
         </TouchableOpacity>
       </View>

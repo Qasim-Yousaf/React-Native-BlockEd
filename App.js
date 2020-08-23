@@ -82,6 +82,7 @@ const styles = StyleSheet.create({
   },
   body: {
     backgroundColor: Colors.white,
+    fontFamily: Sansation
   },
   sectionContainer: {
     marginTop: 32,

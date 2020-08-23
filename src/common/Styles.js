@@ -8,6 +8,12 @@ const Styles = StyleSheet.create({
     width: "90%",
     marginHorizontal: "5%",
   },
+  Input: {
+    backgroundColor: '#ffffff',
+    borderRadius: 6,
+    width: "90%",
+    marginHorizontal: "5%",
+  },
   phoneNoFormStyle: {
     flexDirection: "row",
     justifyContent: "center",

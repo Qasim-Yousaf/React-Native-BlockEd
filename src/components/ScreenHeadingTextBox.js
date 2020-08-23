@@ -5,7 +5,7 @@ import { AppColors } from '../common/Constants.json';
 
 function ScreenHeadingTextBox({ headingText }) {
   return <View style={{ ...Styles.formElement, marginTop: 10 }}>
-    <Text style={{ fontSize: 25, color: AppColors.Font.Heading, textAlign: "center",fontWeight:"bold", }}>{headingText}</Text>
+    <Text style={{ fontSize: 20, color: '#010169', textAlign: "center",fontWeight:"bold", }}>{headingText}</Text>
   </View>;
 }
 

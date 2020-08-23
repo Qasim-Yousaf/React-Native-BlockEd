@@ -29,8 +29,8 @@
     "GOOGLE": "google"
   },
   "roleTypes": {
-    "CUSTOMER": "customer",
-    "SELLER": "seller"
+    "CUSTOMER": "student",
+    "SELLER": "teacher"
   },
   "AppScreens": {
     "BusinessInfo": "BusinessInfo",
