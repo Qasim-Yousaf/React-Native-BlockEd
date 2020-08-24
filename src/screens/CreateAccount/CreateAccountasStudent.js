@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import {
   View,
   Text,
+  TextInput,
   Image,
   TouchableOpacity,
 } from "react-native";
@@ -60,14 +61,18 @@ function CreateAccountasStudent(navigation) {
 
         <ScreenDetailsTextBox text="Please fill below to create a new account" />
 
-        <View style={{ ...Styles.formElement, marginTop:10 }} style={{...Styles.Input}}>
-            <Input  underlineColorAndroid="transparent" placeholder="FIRST NAME" textContentType="name" value="James" />
+        <View style={{ ...Styles.formElement, marginTop:10 }} >
+            <TextInput  underlineColorAndroid="transparent" placeholder="FIRST NAME" textContentType="name" value="James" style={{...Styles.Input}} />
         </View>
 
-        <View style={{ ...Styles.formElement }}>
-            <Input placeholder="LAST NAME" textContentType="name" value="Carter" />
+        <View style={{ ...Styles.formElement }} >
+            <TextInput placeholder="LAST NAME" textContentType="name" value="Carter" style={{...Styles.Input}} />
         </View>
 
+        <View style={{ ...Styles.formElement }} >
+            <TextInput placeholder="PHONE NUMBER" keyboardType = 'numeric' textContentType="number" value="" style={{...Styles.Input}} />
+        </View>
+{/* 
         <View style={{ ...Styles.formElement }}>
             <PhoneInput
                 ref={(ref) => {
@@ -77,13 +82,14 @@ function CreateAccountasStudent(navigation) {
                 setPhoneNumber(num)
                 }}
                 style={{ flex: 1, marginHorizontal: 5, }}
+                style={{...Styles.Input}}
                 textProps={{ placeholder: "PHONE NUMBER", style: { fontSize: 18, borderBottomWidth: 1, } }}
                 onPressFlag={onPressFlag}
                 autoFormat={true}
             />
-        </View>
+        </View> */}
 
-        <CustomCountryPickerModal
+        {/* <CustomCountryPickerModal
             ref={(ref) => {
                 myCountryPicker = ref;
             }}
@@ -93,31 +99,26 @@ function CreateAccountasStudent(navigation) {
                 selectCountry(country);
             }}
             cancelText="Cancel"
-        />
+        /> */}
 
-        <View style={{ ...Styles.formElement, marginTop: "5%" }}>
-            <Input placeholder="EMAIL" textContentType="emailAddress" value="jamescarter@gmail.com"/>
+        <View style={{ ...Styles.formElement }}>
+            <TextInput placeholder="EMAIL" textContentType="emailAddress" value="jamescarter@gmail.com" style={{...Styles.Input}}/>
         </View>
 
-        <View style={{ ...Styles.formElement, width: "80%" }}>
-            <View style={{ flex: 1, flexDirection: "row" }}>
-                <Input placeholder="PASSWORD" textContentType="password" value="" secureTextEntry={passwordHidden} />
-                <CheckBox
-                value={!passwordHidden}
-                onValueChange={setPasswordHidden.bind(null, !passwordHidden)} />
-            </View>
+        <View style={{ ...Styles.formElement,}}>
+            <TextInput placeholder="PASSWORD" textContentType="PASSWORD" value="" style={{...Styles.Input}}/>
         </View>
 
-        <View style={{ flexDirection: "row", alignItems: "center", width: "90%", marginLeft: "5%", marginRight: "5%" }}>
+        <View style={{ flexDirection: "row", alignItems: "center", width: "90%", marginLeft: "4%", marginRight: "5%" }}>
             <CheckBox
                 value={agreementCheck}
                 onValueChange={setAgreementCheck.bind(null, !agreementCheck)} />
             <Text onPress={setAgreementCheck.bind(null, !agreementCheck)}>{`I Agree to the Terms & Conditions`}</Text>
         </View>
 
-        <View style={{ flexDirection: "row", justifyContent: "center", width: "90%", height: 50, marginLeft: "5%", marginRight: "5%", marginBottom: 20, marginTop: 20, }}>
-            <TouchableOpacity
-                style={{ width: "100%", height: "100%",backgroundColor: '#E5E5E5', }}
+        <View>
+            <TouchableOpacity 
+                style={{...Styles.submit_btn}}
                 onPress={onPressSubmit}>
                 <Image resizeMode="stretch" source={submit_btn} />
             </TouchableOpacity>

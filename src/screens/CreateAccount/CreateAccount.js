@@ -20,6 +20,10 @@ const CreateAccount = ({ navigation }) => {
     navigation.push("CreateAccountasStudent");
   }
 
+  function CreateAccountasTeacher() {
+    navigation.push("CreateAccountasTeacher");
+  }
+
   // useEffect(async () => {
   //   let roleId = await AsyncStorage.getCustomerRoleId()
   //   ToastAndroid.show(roleId, ToastAndroid.SHORT)
@@ -79,7 +83,7 @@ const CreateAccount = ({ navigation }) => {
       </View>
 
       <View>
-        <TouchableOpacity onPress={()=>{onPressUserType(Constants.roleTypes.SELLER)}} style={{ paddingBottom: 55 }}>
+        <TouchableOpacity onPress={CreateAccountasTeacher} style={{ paddingBottom: 55 }}>
           <Image source={ImageAsTeacherButton} resizeMode="stretch" />
         </TouchableOpacity>
       </View>

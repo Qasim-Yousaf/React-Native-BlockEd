@@ -19,6 +19,11 @@ export default function CreateAccountOrSignIn({ navigation }) {
   function onPressCreateAccount() {
     navigation.push("CreateAccount");
   }
+
+  function testPhoneVerificationScreen() {
+    navigation.push("PhoneVerificationScreen");
+  }
+
   return <ScreenContainer>
 
     <View style={{ flexDirection: "row-reverse" }}>
@@ -49,7 +54,7 @@ export default function CreateAccountOrSignIn({ navigation }) {
       </View>
 
       <View>
-        <TouchableOpacity onPress={()=>{navigation.push(Constants.AppScreens.QuestionnaireStepOne)}} style={{ paddingBottom: 75 }}>
+        <TouchableOpacity onPress={testPhoneVerificationScreen} style={{ paddingBottom: 75 }}>
           <Image source={ImageSignInButton} resizeMode="stretch" />
         </TouchableOpacity>
       </View>

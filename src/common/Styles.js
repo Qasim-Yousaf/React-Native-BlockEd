@@ -5,14 +5,24 @@ const Styles = StyleSheet.create({
   formElement: {
     flexDirection: "row",
     justifyContent: "center",
-    width: "90%",
-    marginHorizontal: "5%",
   },
   Input: {
     backgroundColor: '#ffffff',
     borderRadius: 6,
     width: "90%",
     marginHorizontal: "5%",
+    marginBottom:10,
+    paddingLeft: 10
+  },
+  Inputupload: {
+    flexDirection: "row",
+    backgroundColor: '#ffffff',
+    borderRadius: 6,
+    width: "90%",
+    marginHorizontal: "5%",
+    marginBottom:10,
+    paddingLeft: 10,
+    padding:15
   },
   phoneNoFormStyle: {
     flexDirection: "row",
@@ -47,6 +57,29 @@ const Styles = StyleSheet.create({
     fontSize:16,
     fontWeight:'bold',
     fontFamily:'Sansation',
+  },
+  submit_btn:{
+    flexDirection: "row",
+    justifyContent: "center", 
+    width: "88%", 
+    height: 50, 
+    marginLeft: "6%",
+    marginRight: "6%",
+    marginBottom: 20,
+    marginTop: 20
+  },
+  SignUpTeacherDocsUploadText: {  
+    fontFamily: 'Sansation',
+    fontStyle: 'normal',
+    fontWeight: 'bold',
+    fontSize: 15,
+    lineHeight: 17,
+    display: 'flex',
+    alignItems: 'center',
+    color: '#222222',
+    width: "90%",
+    marginHorizontal: "5%",
+    marginBottom: 30
   }
 });
 

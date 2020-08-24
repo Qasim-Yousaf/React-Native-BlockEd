@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     right: 0,
   },
   body: {
-    backgroundColor: Colors.white,
+    backgroundColor: "#f4f7fc",
     fontFamily: Sansation
   },
   sectionContainer: {
