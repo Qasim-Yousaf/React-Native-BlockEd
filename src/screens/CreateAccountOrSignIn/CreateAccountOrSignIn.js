@@ -21,7 +21,7 @@ export default function CreateAccountOrSignIn({ navigation }) {
   }
 
   function testPhoneVerificationScreen() {
-    navigation.push("PhoneVerificationScreen");
+    navigation.push("MySettings");
   }
 
   return <ScreenContainer>

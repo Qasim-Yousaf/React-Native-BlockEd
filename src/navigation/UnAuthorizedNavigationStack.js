@@ -5,6 +5,7 @@ import CreateAccount from "../screens/CreateAccount/CreateAccount";
 import CreateAccountasStudent from "../screens/CreateAccount/CreateAccountasStudent";
 import CreateAccountasTeacher from "../screens/CreateAccount/CreateAccountasTeacher";
 import PhoneVerificationScreen from "../screens/PhoneVerificationScreen/PhoneVerificationScreen";
+import MySettings from "../screens/MySettings/MySettings";
 
 
 const { Navigator, Screen } = createStackNavigator();
@@ -17,6 +18,7 @@ export default class UnAuthorizedNavigationStack extends React.Component {
       <Screen name="CreateAccountasStudent" component={CreateAccountasStudent} />
       <Screen name="CreateAccountasTeacher" component={CreateAccountasTeacher} />
       <Screen name="PhoneVerificationScreen" component={PhoneVerificationScreen} />
+      <Screen name="MySettings" component={MySettings} />
       {/* <Screen name="SocialAuthStepOneScreen" component={SocialAuthStepOneScreen} />
       <Screen name="SocialAuthStepTwoScreen" component={SocialAuthStepTwoScreen} />
       <Screen name="SignUpScreen" component={SignUpScreen} />

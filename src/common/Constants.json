@@ -2,7 +2,7 @@
   "BaseUrl": "https://hopeaccelerated-backend.herokuapp.com",
   "AppColors": {
     "Font": {
-      "Heading": "#000000",
+      "Heading": "#010169",
       "HeadingDescription": "#767676FF",
       "ButtonColor": "#24806CFF",
       "QuestionnaireLabelColor": "#2C786C"

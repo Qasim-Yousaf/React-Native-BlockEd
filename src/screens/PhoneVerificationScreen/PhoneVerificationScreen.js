@@ -6,17 +6,61 @@ import {
   TouchableOpacity,
 } from "react-native";
 import Verify from "../../assets/images/Verify.png";
+import ImageButtonGreen from "../../assets/images/button_green.png";
 import ScreenContainer from "../../components/ScreenContainer";
 import styles from "./styles";
-import ApiCalls from "../../services/ApiCalls";
-import { endPoints, apiStatusCodes } from "../../services/ApiConstants";
-import AsyncStorage from "../../services/AsyncStorage";
-import Constants from "../../common/Constants.json";
-import Common from "../../common/Common";
+import HeaderAuthScreen from "../../components/HeaderAuthScreen";
 
 function PhoneVerificationScreen(navigation) {
+
+  const [verificationNumbers, setVerificationNumbers] = React.useState([]);
+  const [verifyButtonDisabled, setVerifyButtonDisabled] = React.useState(true);
+
+  function onPressNumpad(key) {
+    const latestVerificationNumbers = verificationNumbers.concat();
+    if (key === "x") {
+      latestVerificationNumbers.pop();
+      setVerificationNumbers(latestVerificationNumbers);
+      lengthCheck(latestVerificationNumbers.length);
+      return;
+    }
+
+    latestVerificationNumbers.push(key);
+    setVerificationNumbers(latestVerificationNumbers);
+    lengthCheck(latestVerificationNumbers.length);
+  }
+
+  function lengthCheck(updatedVerificationNumbersLength) {
+    setVerifyButtonDisabled(updatedVerificationNumbersLength === 4 ? false : true);
+  }
+
+  async function onPressVerifyButton() {
+
+    try {
+      let response = await ApiCalls.createPostRequest(endPoints.verifyOtp, getOtpAndMobileNo())
+      if (response.status == apiStatusCodes.STATUS_CODE_200 && response.data.success == true) {
+        AsyncStorage.setAuthToken(response.data.token)
+        Common.showSnackbar(Constants.AppMessages.successMsg, Common.SNACKBAR_SUCCESS);
+      }
+      else {
+        Common.showSnackbar(Constants.AppMessages.errorMsg, Common.SNACKBAR_ERROR);
+      }
+    }
+    catch (e) {
+      Common.showSnackbar(Constants.AppMessages.errorMsg, Common.SNACKBAR_ERROR);
+    }
+  }
+
+
+  
+  function onLongPressCrossButton() {
+    setVerificationNumbers([]);
+    setVerifyButtonDisabled(true);
+  }
+
+
     return <ScreenContainer>
-      
+          <HeaderAuthScreen />
           <View style={styles.screenHeadingView}>
             <Text style={styles.screenHeadingText}>Phone Verification</Text>
           </View>
@@ -30,12 +74,12 @@ function PhoneVerificationScreen(navigation) {
       
           <View style={styles.reEnterMobileView}>
             <TouchableOpacity>
-              <Text style={styles.reEnterMobileText}>Re-enter Your Mobile Number</Text>
+              <Text style={styles.reEnterMobileText}>Enter Your Mobile Number</Text>
             </TouchableOpacity>
           </View>
       
           <View style={styles.reEnterMobileView}>
-            <Text style={styles.didNotReceiveCodeText}>You didn't receive a code?{" "}</Text>
+            <Text style={styles.didNotReceiveCodeText}>You didn't a receive a code? {" "}</Text>
       
             <TouchableOpacity>
               <Text style={styles.resendText}>Re-send</Text>
@@ -91,6 +135,27 @@ function PhoneVerificationScreen(navigation) {
           </View>
       
         </ScreenContainer>;
+}
+
+
+function VerificationNumber({ value, marginLeft }) {
+  return value === undefined ? (
+    <View style={styles.circleButton(marginLeft)} />
+  ) : (
+      <ImageBackground style={styles.circleButton(marginLeft)} source={ImageButtonGreen} resizeMode="stretch">
+        <Text style={styles.circleText}>{value}</Text>
+      </ImageBackground>
+    );
+}
+
+function NumpadKey({ value, verifyButtonDisabled, onPress, marginLeft }) {
+  return <TouchableOpacity
+    onPress={onPress}
+    disabled={!verifyButtonDisabled}
+    style={styles.numpad(verifyButtonDisabled, marginLeft)}
+  >
+    <Text style={styles.numpadText}>{value}</Text>
+  </TouchableOpacity>;
 }
 
   

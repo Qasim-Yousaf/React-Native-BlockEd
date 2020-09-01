@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
   verificationCodeView: { ...CommonStyles.formElement, marginTop: 20 },
   reEnterMobileView: { ...CommonStyles.formElement, marginTop: 20 },
   resendText: { fontSize: 17, textDecorationLine: "underline" },
-  reEnterMobileText: { fontSize: 17, textDecorationLine: "underline", color: AppColors.Font.ButtonColor },
+  reEnterMobileText: { fontSize: 17, textDecorationLine: "underline", color: '#00A86B' },
   didNotReceiveCodeText: { fontSize: 17 },
   numpadParentViewFirst: { ...CommonStyles.formElement, marginTop: 30 },
   numpadParentViewSecond: { ...CommonStyles.formElement, marginTop: 10 },
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     return style;
   },
   numpadText: {
-    fontSize: 25
+    fontSize: 17
   }
 });
 
