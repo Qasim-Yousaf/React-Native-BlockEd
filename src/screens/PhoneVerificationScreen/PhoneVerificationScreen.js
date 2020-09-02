@@ -24,7 +24,7 @@ function PhoneVerificationScreen(navigation) {
       lengthCheck(latestVerificationNumbers.length);
       return;
     }
-
+     
     latestVerificationNumbers.push(key);
     setVerificationNumbers(latestVerificationNumbers);
     lengthCheck(latestVerificationNumbers.length);

@@ -24,37 +24,6 @@ const CreateAccount = ({ navigation }) => {
     navigation.push("CreateAccountasTeacher");
   }
 
-  // useEffect(async () => {
-  //   let roleId = await AsyncStorage.getCustomerRoleId()
-  //   ToastAndroid.show(roleId, ToastAndroid.SHORT)
-  // })
-
-  // async function onPressAsACustomer() {
-  //   getRoleId(Constants.roleTypes.CUSTOMER)
-  //   AsyncStorage.setSelectedRoleType(Constants.roleTypes.CUSTOMER)
-  // }
-
-  // async function onPressUserType(userType) {
-  //   getRoleId(userType)
-  //   AsyncStorage.setSelectedRoleType(userType)
-  //   navigation.push("SocialAuthStepOneScreen");
-  // }
-
-
-  // async function getRoleId(type) {
-  //   let roles = ApiCalls.createGetRequest(endPoints.roles);
-  //   roles.then(async (res)=>{
-  //     let appId = await AsyncStorage.getAppId()
-  //     if (res.status == apiStatusCodes.STATUS_CODE_200 && res.data.success == true) {
-  //       let data = res.data.data;
-  //       var filteredData = data.filter(x => x.appId == appId && x.name == type)
-  //       if (filteredData.length > 0) {
-  //         AsyncStorage.setRoleId(filteredData[0]._id)
-  //       }
-  //     }
-  //   }).catch((err)=>console.log(err))
-   
-  // }
 
   return <ScreenContainer>
     <View style={{ flexDirection: "row-reverse" }}>

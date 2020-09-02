@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     marginTop: 10
   },
   screenHeadingText: {
-    fontSize: 21,
+    fontSize: 21,      
     color: AppColors.Font.Heading,
     textAlign: "center"
   },

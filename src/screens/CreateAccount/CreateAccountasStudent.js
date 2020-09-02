@@ -34,25 +34,7 @@ function CreateAccountasStudent(navigation) {
 
     async function onPressSubmit() {
     
-        // if (validateFields() == true) {
-        //   ApiCalls.createPostRequest(endPoints.registerUser, await createUserObject())
-        //     .then((res) => {
-        //       if(res.status == apiStatusCodes.STATUS_CODE_200) {
-        //           res.data.data.otp  // 6410 
-        //           navigation.push("PhoneVerificationScreen");
-        //       }
-        //       console.log(res)
-        //     }).catch((err) => {
-        //       console.log(err)
-        //     })
-        // }
-        // else {
-        //   Snackbar.show({
-        //     text: Constants.AppMessages.mandatoryFieldsMsg,
-        //     duration: Snackbar.LENGTH_LONG,
-        //     backgroundColor: Constants.AppColors.Font.ButtonColor,
-        //   })
-        // }
+       
       }
 
   return <ScreenContainer>
