@@ -17,7 +17,7 @@ import Constants from "../../common/Constants.json";
 
 export default function CreateAccountOrSignIn({ navigation }) {
   function onPressCreateAccount() {
-    navigation.push("CreateAccount");
+    navigation.push("SocialLogin2");
   }
 
   function testPhoneVerificationScreen() {
