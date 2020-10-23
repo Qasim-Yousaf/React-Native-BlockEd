@@ -5,6 +5,7 @@ import {
   Image,
   TouchableOpacity,
   ToastAndroid,
+  StatusBar
 } from "react-native";
 import ImageLandingPageAccountType from "../../assets/images/landing_page_account_type.png";
 import ImageAsStudentButton from "../../assets/images/button_as_a_student.png";
@@ -13,8 +14,10 @@ import ScreenContainer from "../../components/ScreenContainer";
 import HeaderAuthScreen from "../../components/HeaderAuthScreen";
 import Styles from "../../common/Styles";
 import Constants from "../../common/Constants.json";
+import ChooseLanguage from "../../components/ChooseLanguage"
 
 const CreateAccount = ({ navigation }) => {
+  const [openModel , setOpenModel] = React.useState(false);
 
   function CreateAccountasStudent() {
     navigation.push("CreateAccountasStudent");
@@ -25,12 +28,22 @@ const CreateAccount = ({ navigation }) => {
   }
 
 
-  return <ScreenContainer>
+  return <ScreenContainer COLOR={'white'}>
+  
     <View style={{ flexDirection: "row-reverse" }}>
-      <TouchableOpacity style={{ marginRight: 10, padding: 2 }}>
+      <TouchableOpacity onPress={ () => {setOpenModel(!openModel)}}  style={{ marginRight: 10, padding: 2 }}>
         <Text style={{fontWeight:"bold",color:'#010169'}}>Choose Language</Text>
       </TouchableOpacity>
     </View>
+
+
+    {openModel == true ? 
+          <>
+          <ChooseLanguage openModel={true} />
+          </> 
+    
+        : null}
+
 
     <HeaderAuthScreen />
 
@@ -46,13 +59,13 @@ const CreateAccount = ({ navigation }) => {
       </View>
 
       <View>
-        <TouchableOpacity onPress={CreateAccountasStudent} style={{ marginTop: 20, }}>
+        <TouchableOpacity onPress={CreateAccountasStudent} style={{ marginTop: 20,borderWidth:0 }}>
           <Image source={ImageAsStudentButton} resizeMode="stretch" />
         </TouchableOpacity>
       </View>
 
       <View>
-        <TouchableOpacity onPress={CreateAccountasTeacher} style={{ paddingBottom: 55 }}>
+        <TouchableOpacity onPress={CreateAccountasTeacher} style={{ paddingBottom: 0,borderWidth:0 }}>
           <Image source={ImageAsTeacherButton} resizeMode="stretch" />
         </TouchableOpacity>
       </View>

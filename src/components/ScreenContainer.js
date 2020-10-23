@@ -4,20 +4,22 @@ import {
   StatusBar,
   ScrollView,
   StyleSheet,
+  
 } from "react-native";
 import { AppColors } from './../common/Constants.json';
 
 const style = StyleSheet.create({
   safeAreaView: {
-    backgroundColor: AppColors.LightMode.BackgroundColor,
+    // backgroundColor: AppColors.LightMode.BackgroundColor,
+    backgroundColor:'white',
     flex: 1,
   }
 });
 
-function ScreenContainer({ children }) {
+function ScreenContainer({ children , COLOR , statBrColor , BrStyle}) {
   return <>
-    <StatusBar />
-    <SafeAreaView style={style.safeAreaView}>
+    <StatusBar barStyle={BrStyle} backgroundColor={statBrColor} />
+    <SafeAreaView style={{...style.safeAreaView,backgroundColor:COLOR}}>
       <ScrollView>
         {children}
       </ScrollView>

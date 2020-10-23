@@ -4,6 +4,7 @@ import {
   Text,
   Image,
   TouchableOpacity,
+  Dimensions,
 } from "react-native";
 import ImageLandingPage from "../../assets/images/landing_page.png";
 import ImageCreateAccountButton from "../../assets/images/button_create_account.png";
@@ -14,24 +15,41 @@ import ScreenContainer from "../../components/ScreenContainer";
 import HeaderAuthScreen from "../../components/HeaderAuthScreen";
 import Styles from "../../common/Styles";
 import Constants from "../../common/Constants.json";
-
+import ChooseLanguage from "../../components/ChooseLanguage"
 export default function CreateAccountOrSignIn({ navigation }) {
+
+  const [openModel , setOpenModel] = React.useState(false);
+
+
   function onPressCreateAccount() {
-    navigation.push("SocialLogin2");
+    navigation.push("CreateAccount");
   }
 
   function testPhoneVerificationScreen() {
-    navigation.push("MySettings");
-  }
+    // navigation.push("MySettings");
+    navigation.push("SocialLogin2");
 
-  return <ScreenContainer>
+  }
+  
+
+
+
+
+  return <ScreenContainer COLOR={"white"}  statBrColor={"white"}  BrStyle={"dark-content"} >
 
     <View style={{ flexDirection: "row-reverse" }}>
-      <TouchableOpacity style={{ marginRight: 10, padding: 2 }}>
+      <TouchableOpacity onPress={ () => {setOpenModel(!openModel)}} style={{ marginRight: 10, padding: 2 }}>
         <Text style={{fontWeight:"bold",color:'#010169'}}>Choose Language</Text>
       </TouchableOpacity>
+
     </View>
 
+     {openModel == true ? 
+          <>
+          <ChooseLanguage openModel={true} />
+          </> 
+    
+        : null}
     <HeaderAuthScreen />
 
     <View style={{ height: 280, marginTop: 10,marginBottom: 15, alignItems: "center" }}>
@@ -47,14 +65,14 @@ export default function CreateAccountOrSignIn({ navigation }) {
         <Image source={Carousel} />
       </View>
 
-      <View>
-        <TouchableOpacity onPress={onPressCreateAccount} style={{marginBottom: -5}}>
+      <View style={{borderWidth:0,}}>
+        <TouchableOpacity onPress={onPressCreateAccount} style={{marginBottom: 0,borderWidth:0}}>
           <Image source={ImageCreateAccountButton} resizeMode="contain" />
         </TouchableOpacity>
       </View>
 
-      <View>
-        <TouchableOpacity onPress={testPhoneVerificationScreen} style={{ paddingBottom: 75 }}>
+      <View style={{borderWidth:0}}>
+        <TouchableOpacity onPress={testPhoneVerificationScreen} style={{ paddingBottom: 0 ,borderWidth:0}}>
           <Image source={ImageSignInButton} resizeMode="stretch" />
         </TouchableOpacity>
       </View>

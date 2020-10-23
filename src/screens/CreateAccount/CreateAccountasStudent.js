@@ -6,6 +6,7 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
+
 import CheckBox from '@react-native-community/checkbox';
 import {
   Input,
@@ -32,12 +33,12 @@ function CreateAccountasStudent(navigation) {
         myCountryPicker.open();
     }
 
-    async function onPressSubmit() {
+    async function onPressSubmit() { 
     
        
       }
 
-  return <ScreenContainer>
+  return <ScreenContainer statBrColor={"#E5E5E5"}  BrStyle={"dark-content"} COLOR={'#E5E5E5'}>
     <HeaderAuthScreen />
         <ScreenHeadingTextBox headingText="Sign Up"/>
 
@@ -54,7 +55,7 @@ function CreateAccountasStudent(navigation) {
         <View style={{ ...Styles.formElement }} >
             <TextInput placeholder="PHONE NUMBER" keyboardType = 'numeric' textContentType="number" value="" style={{...Styles.Input}} />
         </View>
-{/* 
+
         <View style={{ ...Styles.formElement }}>
             <PhoneInput
                 ref={(ref) => {
@@ -69,9 +70,9 @@ function CreateAccountasStudent(navigation) {
                 onPressFlag={onPressFlag}
                 autoFormat={true}
             />
-        </View> */}
+        </View>
 
-        {/* <CustomCountryPickerModal
+         <CustomCountryPickerModal
             ref={(ref) => {
                 myCountryPicker = ref;
             }}
@@ -81,7 +82,7 @@ function CreateAccountasStudent(navigation) {
                 selectCountry(country);
             }}
             cancelText="Cancel"
-        /> */}
+        /> 
 
         <View style={{ ...Styles.formElement }}>
             <TextInput placeholder="EMAIL" textContentType="emailAddress" value="jamescarter@gmail.com" style={{...Styles.Input}}/>
@@ -105,7 +106,7 @@ function CreateAccountasStudent(navigation) {
                 <Image resizeMode="stretch" source={submit_btn} />
             </TouchableOpacity>
         </View>
-  </ScreenContainer>
+  </ScreenContainer>    
 };
 
 export default CreateAccountasStudent;
