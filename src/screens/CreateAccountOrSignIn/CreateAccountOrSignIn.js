@@ -27,7 +27,7 @@ export default function CreateAccountOrSignIn({ navigation }) {
 
   function testPhoneVerificationScreen() {
     // navigation.push("MySettings");
-    navigation.push("SocialLogin2");
+    navigation.push("SocialLogin1");
 
   }
   

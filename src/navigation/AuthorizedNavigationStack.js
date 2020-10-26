@@ -1,6 +1,9 @@
 import React from 'react';
 import { createStackNavigator, } from '@react-navigation/stack';
 
+import StudentDashboard from '../screens/student/StudentDashboard';
+
+
 const {
   Navigator,
   // Screen
@@ -9,9 +12,9 @@ const {
 export default function AuthorizedNavigationStack() {
   return (
     <Navigator screenOptions={{ headerShown: false }}
-    // initialRouteName="DashboardScreen"
+    // initialRouteName="DashboardScreen" 
     >
-      {/* <Screen name="DashboardScreen" component={DashboardScreen} /> */}
+      <Screen name="StudentDashboard" component={StudentDashboard} />
     </Navigator>
   );
 }

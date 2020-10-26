@@ -6,6 +6,9 @@ import UnAuthorizedNavigationStack from "./UnAuthorizedNavigationStack";
 import { Provider } from 'react-redux';
 import store from '../redux/store';
 
+import AuthorizedNavigationStack from './AuthorizedNavigationStack';
+
+
 const { Navigator, Screen } = createStackNavigator();
 
 export default class AppNavigator extends React.Component {
@@ -41,7 +44,9 @@ export default class AppNavigator extends React.Component {
       <Provider store={store}>
         <NavigationContainer>
           <Navigator screenOptions={{ headerShown: false }}>
-            {authToken == "" && <Screen name="UnAuthorizedNavigationStack" component={UnAuthorizedNavigationStack} />}
+            {/* {authToken == "" && <Screen name="UnAuthorizedNavigationStack" component={UnAuthorizedNavigationStack} />} */}
+              <Screen name="UnAuthorizedNavigationStack" component={UnAuthorizedNavigationStack} />
+              <Screen name="AuthorizedNavigationStack" component={AuthorizedNavigationStack} />
           </Navigator>
         </NavigationContainer>
       </Provider>

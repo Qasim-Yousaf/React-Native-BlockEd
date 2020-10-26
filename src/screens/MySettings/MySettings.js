@@ -5,6 +5,7 @@ import {
     Image,
     TextInput,
     TouchableOpacity,
+    Switch
   } from "react-native";
   import ImageQr from "../../assets/images/ImageQr.png";
   import styles from "./styles";
@@ -12,7 +13,21 @@ import {
   import ScreenContainer from "../../components/ScreenContainer";
   import HeaderAuthScreen from "../../components/HeaderAuthScreen";
 
+
+  import fb from "../../assets/images/fb.png";
+  import insta from "../../assets/images/insta.png";
+  import zoom from "../../assets/images/zoom.png";
+  import Gclassroom from "../../assets/images/Gclassroom.png";
+
+
+
+
   function MySettings(navigation) {
+
+
+    const [isEnabled, setIsEnabled] = React.useState(false);
+    const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+
 
     return(
         <ScreenContainer>
@@ -41,6 +56,52 @@ import {
             <View style={{ ...Styles.formElement }}>
                 <TextInput placeholder="EMAIL" textContentType="emailAddress" value="janedoe@gmail.com" style={{...Styles.Input}}/>
             </View>
+
+            <View style={{flexDirection:'row',alignItems:'center',justifyContent:'space-between',paddingHorizontal:10,height:50,borderRadius:5,marginHorizontal:20,marginBottom:5}}>
+                <Text>Push Notification</Text>
+
+
+                <Switch
+                    trackColor={{ false: "#CCC", true: "green" }}
+                    thumbColor={isEnabled ? "white" : "#f4f3f4"}
+                    ios_backgroundColor="#3e3e3e"
+                    onValueChange={toggleSwitch}
+                    value={isEnabled}
+                />
+
+            </View>
+
+
+            <View style={{flexDirection:'row',alignItems:'center',justifyContent:'space-between',paddingHorizontal:30,height:50,borderRadius:5,marginHorizontal:20,marginBottom:5}}>
+                
+
+
+                <View style={{backgroundColor:'white',width:60,height:50,justifyContent:'center',alignItems:'center'}}>
+                    <Image source={zoom} style={{width:35,height:35}}/>
+                </View>
+
+
+                <View style={{backgroundColor:'white',width:60,height:50,justifyContent:'center',alignItems:'center'}}>
+                    <Image source={Gclassroom} style={{width:25,height:25}}/>
+                </View>
+
+                <View style={{backgroundColor:'white',width:60,height:50,justifyContent:'center',alignItems:'center'}}>
+                    <Image source={fb} style={{width:25,height:25}}/>
+                </View>
+
+                
+
+
+                
+                <View style={{backgroundColor:'white',width:60,height:50,justifyContent:'center',alignItems:'center'}}>
+                    <Image source={insta} style={{width:25,height:25}}/>
+                </View>
+
+
+            </View>
+
+
+            
 
         </ScreenContainer>
     )

@@ -16,40 +16,60 @@ import {
   import ScreenContainer from "../../components/ScreenContainer";
   import HeaderAuthScreen from "../../components/HeaderAuthScreen";
 
-  function SocialLogin1(navigation) {
+  function SocialLogin1(props) {
 
     return(
         <ScreenContainer COLOR={"white"}  statBrColor={"white"}  BrStyle={"dark-content"}>
             <StatusBar barStyle="dark-content"  backgroundColor="white" />
             <HeaderAuthScreen />
+            
+
 
             <View style={styles.screenHeadingView} style={{paddingBottom: 25}}>
                 <Text style={styles.screenHeadingText}>Social Login</Text>
             </View>
 
-            <View style={styles.secondaccounttextView} >
-                <Text style={styles.secondaccounttext}>Have a second account? Login here</Text>
-            </View>
+        
 
 
-            <View style={styles.row}>
-                <Text style={styles.txt}>Login with Zoom (required)</Text>
-                <Image source={zoom3} style={{...styles.img, width:45,height:45}} />
-            </View>
+                <View style={styles.secondaccounttextView} >
+                    <Text style={styles.secondaccounttext}>Have a second account? Login here</Text>
+                </View>
+
+
+            <TouchableOpacity onPress={() => props.navigation.navigate('StudentDashboard')} >
+
+                    <View style={styles.row}>
+                        <Text style={styles.txt}>Login with Zoom (required)</Text>
+                        <Image source={zoom3} style={{...styles.img, width:45,height:45}} />
+                    </View>
+            </TouchableOpacity>
+
+
+            <TouchableOpacity onPress={() => props.navigation.navigate('StudentDashboard')} >
 
             <View style={styles.row}>
                 <Text style={styles.txt}>Login with Zoom (required)</Text>
                 <Image source={Gclassroom} style={{...styles.img,marginRight:5}} />
             </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => props.navigation.navigate('StudentDashboard')} >
+
             <View style={styles.row}>
                 <Text style={styles.txt}>Login with Facebook</Text>
                 <Image source={fb} style={{...styles.img,marginRight:5}} />
             </View>
+            </TouchableOpacity>
+
+
+            <TouchableOpacity onPress={() => props.navigation.navigate('StudentDashboard')} >
+
             <View style={styles.row}>
                 <Text style={styles.txt}>Login with Insta</Text>
                 <Image source={insta} style={{...styles.img,marginRight:5}} />
             </View>
-
+            </TouchableOpacity>
 
             {/* <View style={{marginBottom: 15}} >
                 <TouchableOpacity style={styles.zoom}>

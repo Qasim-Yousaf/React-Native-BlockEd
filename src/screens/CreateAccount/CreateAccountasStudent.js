@@ -21,10 +21,10 @@ import Styles from "../../common/Styles";
 import CustomCountryPickerModal from '../../components/CustomCountryPickerModal';
 import {Picker} from '@react-native-community/picker'
 
-let myCountryPicker;
+let myCountryPicker; 
 let phone;
     
-function CreateAccountasStudent(navigation) {
+function CreateAccountasStudent(props) {
     const [passwordHidden, setPasswordHidden] = React.useState(true);
     const [countryName, setCountryName] = React.useState('');
     const [agreementCheck, setAgreementCheck] = React.useState(false);
@@ -34,7 +34,7 @@ function CreateAccountasStudent(navigation) {
     }
 
     async function onPressSubmit() { 
-    
+       props.navigation.navigate('PhoneVerificationScreen')
        
       }
 
@@ -51,10 +51,10 @@ function CreateAccountasStudent(navigation) {
         <View style={{ ...Styles.formElement }} >
             <TextInput placeholder="LAST NAME" textContentType="name" value="Carter" style={{...Styles.Input}} />
         </View>
-
+{/* 
         <View style={{ ...Styles.formElement }} >
             <TextInput placeholder="PHONE NUMBER" keyboardType = 'numeric' textContentType="number" value="" style={{...Styles.Input}} />
-        </View>
+        </View> */}
 
         <View style={{ ...Styles.formElement }}>
             <PhoneInput

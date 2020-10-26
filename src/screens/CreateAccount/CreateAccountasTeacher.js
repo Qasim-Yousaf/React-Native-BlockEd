@@ -14,14 +14,15 @@ import HeaderAuthScreen from "../../components/HeaderAuthScreen";
 import ScreenHeadingTextBox from '../../components/ScreenHeadingTextBox';
 import ScreenDetailsTextBox from '../../components/ScreenDetailsTextBox';
 import Styles from "../../common/Styles";
+import { useLinkProps } from "@react-navigation/native";
 
     
-function CreateAccountasTeacher (navigation) {
+function CreateAccountasTeacher (props) {
     const [agreementCheck, setAgreementCheck] = React.useState(false);
 
 
-    async function onPressSubmit() {
-    
+   async  function onPressSubmit() {
+        props.navigation.navigate('TeacherDashboard')
     }
 
   return <ScreenContainer>

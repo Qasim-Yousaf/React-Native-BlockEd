@@ -10,8 +10,9 @@ import ImageButtonGreen from "../../assets/images/button_green.png";
 import ScreenContainer from "../../components/ScreenContainer";
 import styles from "./styles";
 import HeaderAuthScreen from "../../components/HeaderAuthScreen";
+import { useLinkProps } from "@react-navigation/native";
 
-function PhoneVerificationScreen(navigation) {
+function PhoneVerificationScreen(props) {
 
   const [verificationNumbers, setVerificationNumbers] = React.useState([]);
   const [verifyButtonDisabled, setVerifyButtonDisabled] = React.useState(true);
@@ -36,19 +37,21 @@ function PhoneVerificationScreen(navigation) {
 
   async function onPressVerifyButton() {
 
-    try {
-      let response = await ApiCalls.createPostRequest(endPoints.verifyOtp, getOtpAndMobileNo())
-      if (response.status == apiStatusCodes.STATUS_CODE_200 && response.data.success == true) {
-        AsyncStorage.setAuthToken(response.data.token)
-        Common.showSnackbar(Constants.AppMessages.successMsg, Common.SNACKBAR_SUCCESS);
-      }
-      else {
-        Common.showSnackbar(Constants.AppMessages.errorMsg, Common.SNACKBAR_ERROR);
-      }
-    }
-    catch (e) {
-      Common.showSnackbar(Constants.AppMessages.errorMsg, Common.SNACKBAR_ERROR);
-    }
+    props.navigation.navigate('MySettings');
+
+    // try {
+    //   let response = await ApiCalls.createPostRequest(endPoints.verifyOtp, getOtpAndMobileNo())
+    //   if (response.status == apiStatusCodes.STATUS_CODE_200 && response.data.success == true) {
+    //     AsyncStorage.setAuthToken(response.data.token)
+    //     Common.showSnackbar(Constants.AppMessages.successMsg, Common.SNACKBAR_SUCCESS);
+    //   }
+    //   else {
+    //     Common.showSnackbar(Constants.AppMessages.errorMsg, Common.SNACKBAR_ERROR);
+    //   }
+    // }
+    // catch (e) {
+    //   Common.showSnackbar(Constants.AppMessages.errorMsg, Common.SNACKBAR_ERROR);
+    // }
   }
 
 

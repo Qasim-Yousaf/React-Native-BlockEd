@@ -8,6 +8,8 @@ import PhoneVerificationScreen from "../screens/PhoneVerificationScreen/PhoneVer
 import MySettings from "../screens/MySettings/MySettings";
 import SocialLogin1 from "../screens/SocialLogin/SocialLogin1";
 import SocialLogin2 from "../screens/SocialLogin/SocialLogin2";
+import StudentDashboard from '../screens/student/StudentDashboard';
+import TeacherDashboard from '../screens/teacher/TeacherDashboard';
 
 
 const { Navigator, Screen } = createStackNavigator();
@@ -23,6 +25,10 @@ export default class UnAuthorizedNavigationStack extends React.Component {
       <Screen name="MySettings" component={MySettings} />
       <Screen name="SocialLogin1" component={SocialLogin1} />
       <Screen name="SocialLogin2" component={SocialLogin2} />
+      <Screen name="StudentDashboard" component={StudentDashboard} />
+      <Screen name="TeacherDashboard" component={TeacherDashboard} />
+      
+      
       {/* <Screen name="SocialAuthStepOneScreen" component={SocialAuthStepOneScreen} />
       <Screen name="SocialAuthStepTwoScreen" component={SocialAuthStepTwoScreen} />
       <Screen name="SignUpScreen" component={SignUpScreen} />
