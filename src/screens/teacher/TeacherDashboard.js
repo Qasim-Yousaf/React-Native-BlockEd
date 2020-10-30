@@ -9,6 +9,7 @@ import LinearGradient from 'react-native-linear-gradient';
 
 const TeacherDashboard = () => {
 
+   const [selectedMenuItem , setMenuItem ] = React.useState('');
 
     return(
         <ScreenContainer COLOR={"#F4F7FC"}  statBrColor={"#F4F7FC"}  BrStyle={"dark-content"}>
@@ -34,40 +35,60 @@ const TeacherDashboard = () => {
         </TouchableOpacity>
 
 
-        <TouchableOpacity  onPress={ () =>{}} style={{marginHorizontal:5,marginTop:10,borderRadius:20,borderWidth:0,paddingHorizontal:30,paddingVertical:15}}>
-                <Text style={{color:'black',fontSize:16,fontWeight:'bold'}}>My Classes</Text>
+        <TouchableOpacity  onPress={ () =>{
+                setMenuItem('myclasses')
+
+        }} style={{backgroundColor: selectedMenuItem == "myclasses"?'green':'transparent',marginHorizontal:5,marginTop:10,borderRadius:20,borderWidth:0,paddingHorizontal:30,paddingVertical:15}}>
+                <Text style={{color:selectedMenuItem == "myclasses"?'white':'black',fontSize:16,fontWeight:'bold'}}>My Classes</Text>
         </TouchableOpacity>
 
 
-        <TouchableOpacity onPress={ () =>{}} style={{marginHorizontal:5,marginTop:10,borderRadius:20,borderWidth:0,paddingHorizontal:30,paddingVertical:15}}>
-                <Text style={{color:'black',fontSize:16,fontWeight:'bold'}}>My Calander</Text>
+        <TouchableOpacity onPress={ () =>{
+                setMenuItem('mycalander')
+
+        }} style={{backgroundColor: selectedMenuItem == "mycalander"?'green':'transparent',marginHorizontal:5,marginTop:10,borderRadius:20,borderWidth:0,paddingHorizontal:30,paddingVertical:15}}>
+                <Text style={{color:selectedMenuItem == "mycalander"?'white':'black',fontSize:16,fontWeight:'bold'}}>My Calander</Text>
         </TouchableOpacity>
 
 
 
 
 
-        <TouchableOpacity onPress={ () =>{}} style={{backgroundColor:'green',marginHorizontal:5,marginTop:10,borderRadius:25,borderWidth:0,paddingHorizontal:30,paddingVertical:15}}>
-                <Text style={{color:'white',fontSize:16,fontWeight:'bold'}}>My Students</Text>
+        <TouchableOpacity onPress={ () =>{
+                setMenuItem('mystudent')
+        }} style={{ backgroundColor: selectedMenuItem == "mystudent"?'green':'transparent',marginHorizontal:5,marginTop:10,borderRadius:25,borderWidth:0,paddingHorizontal:30,paddingVertical:15}}>
+                <Text style={{color:selectedMenuItem == "mystudent"?'white':'black',fontSize:16,fontWeight:'bold'}}>My Students</Text>
         </TouchableOpacity>
 
 
-        <TouchableOpacity onPress={ () =>{}} style={{marginHorizontal:5,marginTop:10,borderRadius:20,borderWidth:0,paddingHorizontal:30,paddingVertical:15}}>
-                <Text style={{color:'black',fontSize:16,fontWeight:'bold'}}>Block Ed Wallet</Text>
+        <TouchableOpacity onPress={ () =>{ 
+                setMenuItem('wallet')
+                
+        }} style={{backgroundColor: selectedMenuItem == "wallet"?'green':'transparent',marginHorizontal:5,marginTop:10,borderRadius:20,borderWidth:0,paddingHorizontal:30,paddingVertical:15}}>
+                <Text style={{color:selectedMenuItem == "wallet"?'white':'black',fontSize:16,fontWeight:'bold'}}>Block Ed Wallet</Text>
         </TouchableOpacity>
 
 
-        <TouchableOpacity onPress={ () =>{}} style={{marginHorizontal:5,marginTop:10,borderRadius:20,borderWidth:0,paddingHorizontal:30,paddingVertical:15}}>
-                <Text style={{color:'black',fontSize:16,fontWeight:'bold'}}>My Profile</Text>
+        <TouchableOpacity onPress={ () =>{
+                setMenuItem('profile')
+
+        }} style={{backgroundColor: selectedMenuItem == "profile"?'green':'transparent',marginHorizontal:5,marginTop:10,borderRadius:20,borderWidth:0,paddingHorizontal:30,paddingVertical:15}}>
+                <Text style={{color:selectedMenuItem == "profile"?'white':'black',fontSize:16,fontWeight:'bold'}}>My Profile</Text>
         </TouchableOpacity>
 
 
-        <TouchableOpacity onPress={ () =>{}} style={{marginHorizontal:5,marginTop:10,borderRadius:20,borderWidth:0,paddingHorizontal:30,paddingVertical:15}}>
-                <Text style={{color:'black',fontSize:16,fontWeight:'bold'}}>Messages</Text>
+        <TouchableOpacity onPress={ () =>{
+                setMenuItem('messages')
+
+        }} style={{backgroundColor: selectedMenuItem == "messages"?'green':'transparent',marginHorizontal:5,marginTop:10,borderRadius:20,borderWidth:0,paddingHorizontal:30,paddingVertical:15}}>
+                <Text style={{color:selectedMenuItem == "messages"?'white':'black',fontSize:16,fontWeight:'bold'}}>Messages</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={ () =>{}} style={{marginHorizontal:5,marginTop:10,borderRadius:20,borderWidth:0,paddingHorizontal:30,paddingVertical:15}}>
-                <Text style={{color:'black',fontSize:16,fontWeight:'bold'}}>Logout</Text>
+        <TouchableOpacity onPress={ () =>{
+                setMenuItem('logout')
+
+        }} style={{backgroundColor: selectedMenuItem == "logout"?'green':'transparent',marginHorizontal:5,marginTop:10,borderRadius:20,borderWidth:0,paddingHorizontal:30,paddingVertical:15}}>
+                <Text style={{color:selectedMenuItem == "logout"?'white':'black',fontSize:16,fontWeight:'bold'}}>Logout</Text>
         </TouchableOpacity>
 
         {/* <LinearGradient  colors={['#00A86B', '#2C786C', '#00A86B']} style={styles.linearGradient}>

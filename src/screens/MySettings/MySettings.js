@@ -22,7 +22,7 @@ import {
 
 
 
-  function MySettings(navigation) {
+  function MySettings(props) {
 
 
     const [isEnabled, setIsEnabled] = React.useState(false);
@@ -30,7 +30,8 @@ import {
 
 
     return(
-        <ScreenContainer>
+        <ScreenContainer COLOR={"#F4F7FC"}  statBrColor={"#F4F7FC"}  BrStyle={"dark-content"}>
+
             <HeaderAuthScreen />
 
             <View style={styles.screenHeadingView}>
@@ -76,26 +77,26 @@ import {
                 
 
 
-                <View style={{backgroundColor:'white',width:60,height:50,justifyContent:'center',alignItems:'center'}}>
+                <TouchableOpacity onPress={ () => props.navigation.navigate('StudentDashboard')}  style={{backgroundColor:'white',width:60,height:50,justifyContent:'center',alignItems:'center'}}>
                     <Image source={zoom} style={{width:35,height:35}}/>
-                </View>
+                </TouchableOpacity>
 
 
-                <View style={{backgroundColor:'white',width:60,height:50,justifyContent:'center',alignItems:'center'}}>
+                <TouchableOpacity  onPress={ () => props.navigation.navigate('StudentDashboard')} style={{backgroundColor:'white',width:60,height:50,justifyContent:'center',alignItems:'center'}}>
                     <Image source={Gclassroom} style={{width:25,height:25}}/>
-                </View>
+                </TouchableOpacity>
 
-                <View style={{backgroundColor:'white',width:60,height:50,justifyContent:'center',alignItems:'center'}}>
+                <TouchableOpacity  onPress={ () => props.navigation.navigate('StudentDashboard')} style={{backgroundColor:'white',width:60,height:50,justifyContent:'center',alignItems:'center'}}>
                     <Image source={fb} style={{width:25,height:25}}/>
-                </View>
+                </TouchableOpacity>
 
                 
 
 
                 
-                <View style={{backgroundColor:'white',width:60,height:50,justifyContent:'center',alignItems:'center'}}>
+                <TouchableOpacity  onPress={ () => props.navigation.navigate('StudentDashboard')} style={{backgroundColor:'white',width:60,height:50,justifyContent:'center',alignItems:'center'}}>
                     <Image source={insta} style={{width:25,height:25}}/>
-                </View>
+                </TouchableOpacity>
 
 
             </View>

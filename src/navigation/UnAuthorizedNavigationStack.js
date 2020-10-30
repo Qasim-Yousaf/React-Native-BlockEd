@@ -10,6 +10,16 @@ import SocialLogin1 from "../screens/SocialLogin/SocialLogin1";
 import SocialLogin2 from "../screens/SocialLogin/SocialLogin2";
 import StudentDashboard from '../screens/student/StudentDashboard';
 import TeacherDashboard from '../screens/teacher/TeacherDashboard';
+import StudentCourseView from '../screens/student/StudentCourseView';
+import StudentCheckout from '../screens/student/StudentCheckout';
+import StudentOrderConformation from '../screens/student/StudentOrderConformation';
+import StudenViewAllCourseList from '../screens/student/StudenViewAllCourseList';
+import WalletScreenOne from "../screens/wallet/WalletScreenOne";
+import WalletScreenTwo from "../screens/wallet/WalletScreenTwo";
+import WalletScreenThree from "../screens/wallet/WalletScreenThree";
+import WalletScreenFour from "../screens/wallet/WalletScreenFour";
+
+
 
 
 const { Navigator, Screen } = createStackNavigator();
@@ -27,7 +37,14 @@ export default class UnAuthorizedNavigationStack extends React.Component {
       <Screen name="SocialLogin2" component={SocialLogin2} />
       <Screen name="StudentDashboard" component={StudentDashboard} />
       <Screen name="TeacherDashboard" component={TeacherDashboard} />
-      
+      <Screen name="StudentCourseView" component={StudentCourseView} />
+      <Screen name="StudentCheckout" component={StudentCheckout} />
+      <Screen name="StudentOrderConformation" component={StudentOrderConformation} />
+      <Screen name="StudenViewAllCourseList" component={StudenViewAllCourseList} />
+      <Screen name="WalletScreenOne" component={WalletScreenOne} />
+      <Screen name="WalletScreenTwo" component={WalletScreenTwo} />
+      <Screen name="WalletScreenThree" component={WalletScreenThree} />
+      <Screen name="WalletScreenFour" component={WalletScreenFour} />
       
       {/* <Screen name="SocialAuthStepOneScreen" component={SocialAuthStepOneScreen} />
       <Screen name="SocialAuthStepTwoScreen" component={SocialAuthStepTwoScreen} />

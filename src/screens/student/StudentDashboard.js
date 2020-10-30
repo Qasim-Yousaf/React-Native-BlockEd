@@ -2,13 +2,20 @@ import React , {Componet} from 'react';
 import { View , Text , StyleSheet , TextInput , TouchableOpacity} from 'react-native';
 import ScreenContainer from "../../components/ScreenContainer";
 import HeaderAuthScreen from "../../components/HeaderAuthScreen";
+import SearchBar from "../../components/SearchBar";
+
 import Feather from 'react-native-vector-icons/Feather';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import LinearGradient from 'react-native-linear-gradient';
 
-const StudentDashboard = () => {
+const StudentDashboard = (props) => {
+        const [selectedMenuItem , setMenuItem ] = React.useState('');
 
+        const handleNavigation =  (nextScreen) => {
+                props.navigation.navigate(nextScreen);
+
+        }
 
     return(
         <ScreenContainer COLOR={"#F4F7FC"}  statBrColor={"#F4F7FC"}  BrStyle={"dark-content"}>
@@ -18,50 +25,68 @@ const StudentDashboard = () => {
                 <HeaderAuthScreen />
             </View>
 
-    <TouchableOpacity onPress={ () => {console.log('searchIsPress')}} style={{flexDirection:'row',borderWidth:0,backgroundColor:'white',marginHorizontal:20,borderRadius:5,height:60,marginVertical:10,padding:10,alignItems:'center'}}>
 
-            <Fontisto name="search" size={20} color="black" style={{paddingRight:10}}/>
-            <TextInput 
-                  placeholderTextColor = "black"  
-                  placeholder="SEARCH ALL COURSES"
-                  underlineColorAndroid = "transparent"
-                  style={{borderWidth:0,flex:1}}
-                // ,borderRadius:5,marginHorizontal:20,marginVkkdfkkdertical:10,paddingHorizontal:10,height:60,backgroundColor:'white'}}
-                />
-
-            <MaterialCommunityIcons name="microphone-outline" size={30} color="black" style={{paddingRight:10}}/>
-
-        </TouchableOpacity>
+               <SearchBar /> 
 
 
-        <TouchableOpacity  onPress={ () =>{}} style={{marginHorizontal:5,marginTop:10,borderRadius:20,borderWidth:0,paddingHorizontal:30,paddingVertical:15}}>
-                <Text style={{color:'black',fontSize:16,fontWeight:'bold'}}>My Classes</Text>
-        </TouchableOpacity>
+        <TouchableOpacity  onPress={ () =>{
+                setMenuItem('myclasses')
 
-
-        <TouchableOpacity onPress={ () =>{}} style={{marginHorizontal:5,marginTop:10,borderRadius:20,borderWidth:0,paddingHorizontal:30,paddingVertical:15}}>
-                <Text style={{color:'black',fontSize:16,fontWeight:'bold'}}>My Calander</Text>
+        }} style={{backgroundColor: selectedMenuItem == "myclasses"?'#3FB65F':'transparent',marginHorizontal:5,marginTop:10,borderRadius:20,borderWidth:0,paddingHorizontal:30,paddingVertical:15}}>
+                <Text style={{color:selectedMenuItem == "myclasses"?'white':'black',fontSize:16,fontWeight:'bold'}}>My Classes</Text>
         </TouchableOpacity>
 
 
 
+        <TouchableOpacity  onPress={ () =>{
+                setMenuItem('mycourses');
+                handleNavigation('StudenViewAllCourseList');
 
 
-        <TouchableOpacity onPress={ () =>{}} style={{backgroundColor:'green',marginHorizontal:5,marginTop:10,borderRadius:25,borderWidth:0,paddingHorizontal:30,paddingVertical:15}}>
-                <Text style={{color:'white',fontSize:16,fontWeight:'bold'}}>Block Ed Wallet</Text>
+        }} style={{backgroundColor: selectedMenuItem == "mycourses"?'#3FB65F':'transparent',marginHorizontal:5,marginTop:10,borderRadius:20,borderWidth:0,paddingHorizontal:30,paddingVertical:15}}>
+                <Text style={{color:selectedMenuItem == "mycourses"?'white':'black',fontSize:16,fontWeight:'bold'}}>My Courses</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={ () =>{}} style={{marginHorizontal:5,marginTop:10,borderRadius:20,borderWidth:0,paddingHorizontal:30,paddingVertical:15}}>
-                <Text style={{color:'black',fontSize:16,fontWeight:'bold'}}>My Profile</Text>
+
+        <TouchableOpacity onPress={ () =>{
+                setMenuItem('mycalander')
+
+        }} style={{backgroundColor: selectedMenuItem == "mycalander"?'#3FB65F':'transparent',marginHorizontal:5,marginTop:10,borderRadius:20,borderWidth:0,paddingHorizontal:30,paddingVertical:15}}>
+                <Text style={{color:selectedMenuItem == "mycalander"?'white':'black',fontSize:16,fontWeight:'bold'}}>My Calander</Text>
         </TouchableOpacity>
 
 
-        <TouchableOpacity onPress={ () =>{}} style={{marginHorizontal:5,marginTop:10,borderRadius:20,borderWidth:0,paddingHorizontal:30,paddingVertical:15}}>
-                <Text style={{color:'black',fontSize:16,fontWeight:'bold'}}>Messages</Text>
+
+
+
+        <TouchableOpacity onPress={ () =>{
+                setMenuItem('wallet');
+                handleNavigation('WalletScreenOne');
+
+        }} style={{backgroundColor: selectedMenuItem == "wallet"?'#3FB65F':'transparent',marginHorizontal:5,marginTop:10,borderRadius:25,borderWidth:0,paddingHorizontal:30,paddingVertical:15}}>
+                <Text style={{color:selectedMenuItem == "wallet"?'white':'black',fontSize:16,fontWeight:'bold'}}>Block Ed Wallet</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={ () =>{}} style={{marginHorizontal:5,marginTop:10,borderRadius:20,borderWidth:0,paddingHorizontal:30,paddingVertical:15}}>
-                <Text style={{color:'black',fontSize:16,fontWeight:'bold'}}>Logout</Text>
+        <TouchableOpacity onPress={ () =>{
+                setMenuItem('profile')
+
+        }} style={{backgroundColor: selectedMenuItem == "profile"?'#3FB65F':'transparent',marginHorizontal:5,marginTop:10,borderRadius:20,borderWidth:0,paddingHorizontal:30,paddingVertical:15}}>
+                <Text style={{color:selectedMenuItem == "profile"?'white':'black',fontSize:16,fontWeight:'bold'}}>My Profile</Text>
+        </TouchableOpacity>
+
+
+        <TouchableOpacity onPress={ () =>{
+                setMenuItem('messages')
+
+        }} style={{backgroundColor: selectedMenuItem == "messages"?'#3FB65F':'transparent',marginHorizontal:5,marginTop:10,borderRadius:20,borderWidth:0,paddingHorizontal:30,paddingVertical:15}}>
+                <Text style={{color:selectedMenuItem == "messages"?'white':'black',fontSize:16,fontWeight:'bold'}}>Messages</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={ () =>{
+                setMenuItem('logout')
+
+        }} style={{backgroundColor: selectedMenuItem == "logout"?'#3FB65F':'transparent',marginHorizontal:5,marginTop:10,borderRadius:20,borderWidth:0,paddingHorizontal:30,paddingVertical:15}}>
+                <Text style={{color:selectedMenuItem == "logout"?'white':'black',fontSize:16,fontWeight:'bold'}}>Logout</Text>
         </TouchableOpacity>
 
         {/* <LinearGradient  colors={['#00A86B', '#2C786C', '#00A86B']} style={styles.linearGradient}>
