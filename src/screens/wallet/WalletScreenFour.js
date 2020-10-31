@@ -36,6 +36,8 @@ const WalletScreenFour = (props) => {
             </View>
 
                     <TouchableOpacity 
+                        // onPress={ () => props.navigation.navigate('TodayAppointment')}
+
                         onPress={ () => {}}
                         style={styles.dropDown}>
                         <Text style={styles.credit}>Tokens to be converted or sent</Text>

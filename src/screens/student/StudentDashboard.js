@@ -49,7 +49,9 @@ const StudentDashboard = (props) => {
 
 
         <TouchableOpacity onPress={ () =>{
-                setMenuItem('mycalander')
+                setMenuItem('mycalander');
+                handleNavigation('TodayAppointment');
+
 
         }} style={{backgroundColor: selectedMenuItem == "mycalander"?'#3FB65F':'transparent',marginHorizontal:5,marginTop:10,borderRadius:20,borderWidth:0,paddingHorizontal:30,paddingVertical:15}}>
                 <Text style={{color:selectedMenuItem == "mycalander"?'white':'black',fontSize:16,fontWeight:'bold'}}>My Calander</Text>
@@ -69,6 +71,7 @@ const StudentDashboard = (props) => {
 
         <TouchableOpacity onPress={ () =>{
                 setMenuItem('profile')
+                handleNavigation('MySettings')
 
         }} style={{backgroundColor: selectedMenuItem == "profile"?'#3FB65F':'transparent',marginHorizontal:5,marginTop:10,borderRadius:20,borderWidth:0,paddingHorizontal:30,paddingVertical:15}}>
                 <Text style={{color:selectedMenuItem == "profile"?'white':'black',fontSize:16,fontWeight:'bold'}}>My Profile</Text>

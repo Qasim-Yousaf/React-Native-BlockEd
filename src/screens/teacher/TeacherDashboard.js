@@ -7,12 +7,19 @@ import Fontisto from 'react-native-vector-icons/Fontisto';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import LinearGradient from 'react-native-linear-gradient';
 
-const TeacherDashboard = () => {
+const TeacherDashboard = (props) => {
 
    const [selectedMenuItem , setMenuItem ] = React.useState('');
 
+
+   const handleNavigation =  (nextScreen) => {
+        props.navigation.navigate(nextScreen);
+
+}
+
+
     return(
-        <ScreenContainer COLOR={"#F4F7FC"}  statBrColor={"#F4F7FC"}  BrStyle={"dark-content"}>
+        <ScreenContainer  COLOR={"#F4F7FC"}  statBrColor={"#F4F7FC"}  BrStyle={"dark-content"}>
            
            
             <View style={{marginTop:15}}>
@@ -45,6 +52,8 @@ const TeacherDashboard = () => {
 
         <TouchableOpacity onPress={ () =>{
                 setMenuItem('mycalander')
+                handleNavigation('TodayAppointment');
+
 
         }} style={{backgroundColor: selectedMenuItem == "mycalander"?'green':'transparent',marginHorizontal:5,marginTop:10,borderRadius:20,borderWidth:0,paddingHorizontal:30,paddingVertical:15}}>
                 <Text style={{color:selectedMenuItem == "mycalander"?'white':'black',fontSize:16,fontWeight:'bold'}}>My Calander</Text>
@@ -63,6 +72,8 @@ const TeacherDashboard = () => {
 
         <TouchableOpacity onPress={ () =>{ 
                 setMenuItem('wallet')
+                handleNavigation('WalletScreenOne');
+
                 
         }} style={{backgroundColor: selectedMenuItem == "wallet"?'green':'transparent',marginHorizontal:5,marginTop:10,borderRadius:20,borderWidth:0,paddingHorizontal:30,paddingVertical:15}}>
                 <Text style={{color:selectedMenuItem == "wallet"?'white':'black',fontSize:16,fontWeight:'bold'}}>Block Ed Wallet</Text>
@@ -71,6 +82,8 @@ const TeacherDashboard = () => {
 
         <TouchableOpacity onPress={ () =>{
                 setMenuItem('profile')
+                handleNavigation('MySettings')
+
 
         }} style={{backgroundColor: selectedMenuItem == "profile"?'green':'transparent',marginHorizontal:5,marginTop:10,borderRadius:20,borderWidth:0,paddingHorizontal:30,paddingVertical:15}}>
                 <Text style={{color:selectedMenuItem == "profile"?'white':'black',fontSize:16,fontWeight:'bold'}}>My Profile</Text>

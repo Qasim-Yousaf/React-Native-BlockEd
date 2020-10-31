@@ -28,7 +28,8 @@ const CreateAccount = ({ navigation }) => {
   }
 
 
-  return <ScreenContainer COLOR={'white'}>
+  return <ScreenContainer  COLOR={"#F4F7FC"}  statBrColor={"#F4F7FC"}  BrStyle={"dark-content"}>
+ 
   
     <View style={{ flexDirection: "row-reverse" }}>
       <TouchableOpacity onPress={ () => {setOpenModel(!openModel)}}  style={{ marginRight: 10, padding: 2 }}>

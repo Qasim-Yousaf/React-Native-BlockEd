@@ -1,8 +1,10 @@
 import React from 'react';
-import {View , Text , Image  ,StyleSheet, Dimensions ,TouchableOpacity, ScrollView } from 'react-native';
+import {View , Text , Image ,TextInput ,StyleSheet, Dimensions ,TouchableOpacity, ScrollView } from 'react-native';
 import Entypo from 'react-native-vector-icons/Entypo';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
+
+ 
 
 
 const WalletHeader = ({navigation}) => {
@@ -15,6 +17,9 @@ const WalletHeader = ({navigation}) => {
 
         <Entypo onPress={ () =>{}} name="dots-three-vertical" size={20} color="white" />
         
+
+
+
     </View> 
     );
 }

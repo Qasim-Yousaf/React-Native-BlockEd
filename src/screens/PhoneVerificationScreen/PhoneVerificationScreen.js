@@ -37,8 +37,9 @@ function PhoneVerificationScreen(props) {
 
   async function onPressVerifyButton() {
 
-    props.navigation.navigate('MySettings');
-
+    props.navigation.navigate('StudentDashboard');
+    
+    
     // try {
     //   let response = await ApiCalls.createPostRequest(endPoints.verifyOtp, getOtpAndMobileNo())
     //   if (response.status == apiStatusCodes.STATUS_CODE_200 && response.data.success == true) {
@@ -62,17 +63,18 @@ function PhoneVerificationScreen(props) {
   }
 
 
-    return <ScreenContainer>
+   return  <ScreenContainer  COLOR={"#F4F7FC"}  statBrColor={"#F4F7FC"}  BrStyle={"dark-content"}>
+    
           <HeaderAuthScreen />
           <View style={styles.screenHeadingView}>
             <Text style={styles.screenHeadingText}>Phone Verification</Text>
           </View>
       
           <View style={styles.verificationCodeView}>
-            <VerificationNumber value="" marginLeft={0} />
-            <VerificationNumber value="" marginLeft={20} />
-            <VerificationNumber value="" marginLeft={20} />
-            <VerificationNumber value="" marginLeft={20} />
+            <VerificationNumber value="2" marginLeft={0} />
+            <VerificationNumber value="3" marginLeft={20} />
+            <VerificationNumber value="4" marginLeft={20} />
+            <VerificationNumber value="5" marginLeft={20} />
           </View>
       
           <View style={styles.reEnterMobileView}>

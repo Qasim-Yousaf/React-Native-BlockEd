@@ -76,25 +76,37 @@ import {
             <View style={{flexDirection:'row',alignItems:'center',justifyContent:'space-between',paddingHorizontal:30,height:50,borderRadius:5,marginHorizontal:20,marginBottom:5}}>
                 
 
+{/* 
+                handleNavigation('MySettings')
 
-                <TouchableOpacity onPress={ () => props.navigation.navigate('StudentDashboard')}  style={{backgroundColor:'white',width:60,height:50,justifyContent:'center',alignItems:'center'}}>
+*/}
+                <TouchableOpacity onPress={ () => {}}  style={{backgroundColor:'white',width:60,height:50,justifyContent:'center',alignItems:'center'}}>
                     <Image source={zoom} style={{width:35,height:35}}/>
                 </TouchableOpacity>
 
+{/* 
+                handleNavigation('MySettings')
 
-                <TouchableOpacity  onPress={ () => props.navigation.navigate('StudentDashboard')} style={{backgroundColor:'white',width:60,height:50,justifyContent:'center',alignItems:'center'}}>
+*/}
+                <TouchableOpacity  onPress={ () => {}} style={{backgroundColor:'white',width:60,height:50,justifyContent:'center',alignItems:'center'}}>
                     <Image source={Gclassroom} style={{width:25,height:25}}/>
                 </TouchableOpacity>
+{/* 
+                handleNavigation('MySettings')
 
-                <TouchableOpacity  onPress={ () => props.navigation.navigate('StudentDashboard')} style={{backgroundColor:'white',width:60,height:50,justifyContent:'center',alignItems:'center'}}>
+*/}
+                <TouchableOpacity  onPress={ () => {}} style={{backgroundColor:'white',width:60,height:50,justifyContent:'center',alignItems:'center'}}>
                     <Image source={fb} style={{width:25,height:25}}/>
                 </TouchableOpacity>
 
                 
 
 
+                {/* 
+                handleNavigation('MySettings')
                 
-                <TouchableOpacity  onPress={ () => props.navigation.navigate('StudentDashboard')} style={{backgroundColor:'white',width:60,height:50,justifyContent:'center',alignItems:'center'}}>
+                */}
+                <TouchableOpacity  onPress={ () => {}} style={{backgroundColor:'white',width:60,height:50,justifyContent:'center',alignItems:'center'}}>
                     <Image source={insta} style={{width:25,height:25}}/>
                 </TouchableOpacity>
 

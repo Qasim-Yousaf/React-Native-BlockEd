@@ -25,7 +25,8 @@ function CreateAccountasTeacher (props) {
         props.navigation.navigate('TeacherDashboard')
     }
 
-  return <ScreenContainer>
+  return <ScreenContainer  COLOR={"#F4F7FC"}  statBrColor={"#F4F7FC"}  BrStyle={"dark-content"}>
+
     <HeaderAuthScreen />
         <ScreenHeadingTextBox headingText="Sign Up"/>
 

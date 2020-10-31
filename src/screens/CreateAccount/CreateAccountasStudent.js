@@ -38,7 +38,8 @@ function CreateAccountasStudent(props) {
        
       }
 
-  return <ScreenContainer statBrColor={"#E5E5E5"}  BrStyle={"dark-content"} COLOR={'#E5E5E5'}>
+   return <ScreenContainer  COLOR={"#F4F7FC"}  statBrColor={"#F4F7FC"}  BrStyle={"dark-content"}>
+    
     <HeaderAuthScreen />
         <ScreenHeadingTextBox headingText="Sign Up"/>
 
@@ -51,11 +52,11 @@ function CreateAccountasStudent(props) {
         <View style={{ ...Styles.formElement }} >
             <TextInput placeholder="LAST NAME" textContentType="name" value="Carter" style={{...Styles.Input}} />
         </View>
-{/* 
+
         <View style={{ ...Styles.formElement }} >
             <TextInput placeholder="PHONE NUMBER" keyboardType = 'numeric' textContentType="number" value="" style={{...Styles.Input}} />
-        </View> */}
-
+        </View>
+{/* 
         <View style={{ ...Styles.formElement }}>
             <PhoneInput
                 ref={(ref) => {
@@ -70,7 +71,7 @@ function CreateAccountasStudent(props) {
                 onPressFlag={onPressFlag}
                 autoFormat={true}
             />
-        </View>
+        </View> */}
 
          <CustomCountryPickerModal
             ref={(ref) => {
