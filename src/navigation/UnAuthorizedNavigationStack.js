@@ -20,7 +20,8 @@ import WalletScreenThree from "../screens/wallet/WalletScreenThree";
 import WalletScreenFour from "../screens/wallet/WalletScreenFour";
 import TodayAppointment from '../screens/TodayAppointment';
 import TodayAppointmentWithSelectedCourse from '../screens/TodayAppointmentWithSelectedCourse';
-
+import MyClasses from '../screens/Classes/MyClasses';
+import MyMessages from '../screens/Messages/MyMessages';
 
 
 
@@ -47,11 +48,15 @@ export default class UnAuthorizedNavigationStack extends React.Component {
       <Screen name="WalletScreenTwo" component={WalletScreenTwo} />
       <Screen name="WalletScreenThree" component={WalletScreenThree} />
       <Screen name="WalletScreenFour" component={WalletScreenFour} />
+      <Screen name="MyClasses" component={MyClasses} />
+
       <Screen name="TodayAppointment" component={TodayAppointment} />
       <Screen name="TodayAppointmentWithSelectedCourse" component={TodayAppointmentWithSelectedCourse} />
+      <Screen name="MyMessages" component={MyMessages} />
+
 
       
-
+      
       {/* <Screen name="SocialAuthStepOneScreen" component={SocialAuthStepOneScreen} />
       <Screen name="SocialAuthStepTwoScreen" component={SocialAuthStepTwoScreen} />
       <Screen name="SignUpScreen" component={SignUpScreen} />
