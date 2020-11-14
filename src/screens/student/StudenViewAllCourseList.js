@@ -50,7 +50,7 @@ const StudenViewAllCourseList = (props) => {
 
 const styles = StyleSheet.create({
     container:{
-        marginHorizontal:20,
+        marginHorizontal:10,
         // borderWidth:1,
         marginTop:30
 
@@ -72,6 +72,8 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         backgroundColor:'white',
         elevation:5,
+        // borderWidth:1,
+        
         // borderRadius:5
     },
     imgCon:{
@@ -83,10 +85,10 @@ const styles = StyleSheet.create({
         height:'100%',
     },
     cardContent:{
-        // flexDirection:'row',
         padding:10,
         // backgroundColor:'red',
-        width:'90%',
+        width:'70%',
+
 
 
     },

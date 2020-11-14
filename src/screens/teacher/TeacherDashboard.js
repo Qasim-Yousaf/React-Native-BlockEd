@@ -44,6 +44,8 @@ const TeacherDashboard = (props) => {
 
         <TouchableOpacity  onPress={ () =>{
                 setMenuItem('myclasses')
+                handleNavigation('MyClasses')
+
 
         }} style={{backgroundColor: selectedMenuItem == "myclasses"?'green':'transparent',marginHorizontal:5,marginTop:10,borderRadius:20,borderWidth:0,paddingHorizontal:30,paddingVertical:15}}>
                 <Text style={{color:selectedMenuItem == "myclasses"?'white':'black',fontSize:16,fontWeight:'bold'}}>My Classes</Text>
@@ -92,6 +94,7 @@ const TeacherDashboard = (props) => {
 
         <TouchableOpacity onPress={ () =>{
                 setMenuItem('messages')
+                handleNavigation('MyMessages')
 
         }} style={{backgroundColor: selectedMenuItem == "messages"?'green':'transparent',marginHorizontal:5,marginTop:10,borderRadius:20,borderWidth:0,paddingHorizontal:30,paddingVertical:15}}>
                 <Text style={{color:selectedMenuItem == "messages"?'white':'black',fontSize:16,fontWeight:'bold'}}>Messages</Text>

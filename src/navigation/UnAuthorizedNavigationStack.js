@@ -22,6 +22,7 @@ import TodayAppointment from '../screens/TodayAppointment';
 import TodayAppointmentWithSelectedCourse from '../screens/TodayAppointmentWithSelectedCourse';
 import MyClasses from '../screens/Classes/MyClasses';
 import MyMessages from '../screens/Messages/MyMessages';
+import ChatScreen from '../screens/Messages/ChatScreen';
 
 
 
@@ -53,8 +54,9 @@ export default class UnAuthorizedNavigationStack extends React.Component {
       <Screen name="TodayAppointment" component={TodayAppointment} />
       <Screen name="TodayAppointmentWithSelectedCourse" component={TodayAppointmentWithSelectedCourse} />
       <Screen name="MyMessages" component={MyMessages} />
+      <Screen name="ChatScreen" component={ChatScreen} />
 
-
+      
       
       
       {/* <Screen name="SocialAuthStepOneScreen" component={SocialAuthStepOneScreen} />

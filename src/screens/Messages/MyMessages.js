@@ -16,7 +16,9 @@ function MyMessages (props) {
     const [selectedMenuItem , setMenuItem ] = React.useState('');
 
     const Card = ({name , img , active}) => (
-        <TouchableOpacity onPress={() =>console.log('press')} style={{flex:1,flexDirection:'row',height:80,marginHorizontal:20,alignItems:'center',borderBottomColor:'#CCC',borderBottomWidth:0.5}}>
+        <TouchableOpacity onPress={() =>{props.navigation.navigate('ChatScreen',{
+            name:name
+        })}} style={{flex:1,flexDirection:'row',height:80,marginHorizontal:15,alignItems:'center',borderBottomColor:'#CCC',borderBottomWidth:0.5}}>
             <View style={{width:70,height:70 , borderRadius:50,justifyContent:'flex-start',alignItems:'center',borderWidth:0}}>
                 <Image source={{uri:img}} style={{width:'100%',height:'100%' , borderRadius:50}} />
                 {active == true ? 
@@ -45,7 +47,7 @@ function MyMessages (props) {
 
             </View>
 
-            <View style={{borderWidth:0,borderRadius:3,marginVertical:15,marginHorizontal:20,elevation:5,justifyContent:'center',alignItems:'center',backgroundColor:'white'}}>
+            <View style={{borderWidth:0,borderRadius:3,marginVertical:15,marginHorizontal:15,elevation:5,justifyContent:'center',alignItems:'center',backgroundColor:'white'}}>
                 <TextInput placeholder="Search Messages" />
             </View>
 
@@ -74,7 +76,7 @@ const styles= StyleSheet.create({
         flexDirection:'row',
         marginTop:30,
         justifyContent:'space-between',
-        paddingHorizontal:15
+        paddingHorizontal:10
 
     },
     headerTxt:{
