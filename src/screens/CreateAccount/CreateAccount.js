@@ -20,11 +20,20 @@ const CreateAccount = ({ navigation }) => {
   const [openModel , setOpenModel] = React.useState(false);
 
   function CreateAccountasStudent() {
-    navigation.push("CreateAccountasStudent");
+    // navigation.push("CreateAccountasStudent");
+    navigation.navigate("SocialLogin1",{
+      type:'student',
+    });
+
   }
 
   function CreateAccountasTeacher() {
-    navigation.push("CreateAccountasTeacher");
+    navigation.navigate("SocialLogin1",{
+      type:'teacher',
+    });
+    // navigation.push("CreateAccountasTeacher");
+
+    
   }
 
 

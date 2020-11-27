@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef , useState } from "react";
 import {
   View,
   Text,
@@ -18,11 +18,23 @@ import { useLinkProps } from "@react-navigation/native";
 
     
 function CreateAccountasTeacher (props) {
+    console.log('I am here techer create account  screen ' )
+    let ty = props.route.params.type;
+    console.log(' type is ',ty);
+    const [type , settype ] = useState(props.route.params.type);
+
+
     const [agreementCheck, setAgreementCheck] = React.useState(false);
 
 
    async  function onPressSubmit() {
-        props.navigation.navigate('TeacherDashboard')
+        // props.navigation.navigate('TeacherDashboard')
+        props.navigation.navigate('PhoneVerificationScreen',{
+            type:type
+        })
+
+
+
     }
 
   return <ScreenContainer  COLOR={"#F4F7FC"}  statBrColor={"#F4F7FC"}  BrStyle={"dark-content"}>

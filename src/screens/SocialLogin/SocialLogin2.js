@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
     View,
     Text,
@@ -16,11 +16,41 @@ import {
   import ScreenContainer from "../../components/ScreenContainer";
   import HeaderAuthScreen from "../../components/HeaderAuthScreen";
 
-  function SocialLogin1(props) {
+  function SocialLogin2(props) {
+      console.log('I am here social media screen 2' )
+    let ty = props.route.params.type;
+    console.log('screen social media 2 type is ',ty);
+    const [type , settype ] = useState(props.route.params.type)
+
+    const handleNavigation = () => {
+        console.log('Type is ----- ',type);
+
+        props.navigation.navigate('CreateAccountasStudent',{
+            type:type,
+        });
+
+        // if(type == 'teacher'){
+        //     // props.navigation.navigate('TeacherDashboard');
+        //     props.navigation.navigate('CreateAccountasTeacher',{
+        //         type:type,
+        //     });
+      
+      
+        //   } else if(type == 'student'){
+        //     // props.navigation.navigate('StudentDashboard');
+        //     props.navigation.navigate('CreateAccountasStudent',{
+        //         type:type,
+        //     });
+      
+      
+        //   }
+    }
 
     return(
-        <ScreenContainer COLOR={"white"}  statBrColor={"white"}  BrStyle={"dark-content"}>
-            <StatusBar barStyle="dark-content"  backgroundColor="white" />
+<ScreenContainer  COLOR={"#F4F7FC"}  statBrColor={"#F4F7FC"}  BrStyle={"dark-content"}>
+
+        {/* <ScreenContainer COLOR={"white"}  statBrColor={"white"}  BrStyle={"dark-content"}> */}
+            {/* <StatusBar barStyle="dark-content"  backgroundColor="white" /> */}
             <HeaderAuthScreen />
             
 
@@ -37,7 +67,7 @@ import {
                 </View>
 
 
-            <TouchableOpacity onPress={() => props.navigation.navigate('StudentDashboard')} >
+            <TouchableOpacity onPress={() => handleNavigation()} >
 
                     <View style={styles.row}>
                         <Text style={styles.txt}>Login with Zoom (required)</Text>
@@ -46,15 +76,15 @@ import {
             </TouchableOpacity>
 
 
-            <TouchableOpacity onPress={() => props.navigation.navigate('StudentDashboard')} >
+            <TouchableOpacity onPress={() => handleNavigation()} >
 
             <View style={styles.row}>
-                <Text style={styles.txt}>Login with Zoom (required)</Text>
+                <Text style={styles.txt}>Login with Classroom (required)</Text>
                 <Image source={Gclassroom} style={{...styles.img,marginRight:5}} />
             </View>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => props.navigation.navigate('StudentDashboard')} >
+            <TouchableOpacity onPress={() => handleNavigation()} >
 
             <View style={styles.row}>
                 <Text style={styles.txt}>Login with Facebook</Text>
@@ -63,7 +93,7 @@ import {
             </TouchableOpacity>
 
 
-            <TouchableOpacity onPress={() => props.navigation.navigate('StudentDashboard')} >
+            <TouchableOpacity onPress={() => handleNavigation()} >
 
             <View style={styles.row}>
                 <Text style={styles.txt}>Login with Insta</Text>
@@ -103,4 +133,4 @@ import {
     )
   }
 
-  export default SocialLogin1;
+  export default SocialLogin2;

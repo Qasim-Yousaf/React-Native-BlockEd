@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef ,useState } from "react";
 import {
   View,
   Text,
@@ -25,6 +25,15 @@ let myCountryPicker;
 let phone;
     
 function CreateAccountasStudent(props) {
+
+
+    console.log('I am here student create account  screen ' )
+    let ty = props.route.params.type;
+    console.log('screen social media 2 type is ',ty);
+    const [type , settype ] = useState(props.route.params.type)
+
+
+
     const [passwordHidden, setPasswordHidden] = React.useState(true);
     const [countryName, setCountryName] = React.useState('');
     const [agreementCheck, setAgreementCheck] = React.useState(false);
@@ -34,8 +43,31 @@ function CreateAccountasStudent(props) {
     }
 
     async function onPressSubmit() { 
-       props.navigation.navigate('PhoneVerificationScreen')
+
+
+    //    props.navigation.navigate('PhoneVerificationScreen',{
+    //        type:type
+    //    })
        
+
+       if(type == 'teacher'){
+            // props.navigation.navigate('TeacherDashboard');
+            props.navigation.navigate('CreateAccountasTeacher',{
+                type:type,
+            });
+      
+      
+          } else if(type == 'student'){
+            //   alert('Personal info screen -> phone verification -> otp screen -> Dashboard ')
+            props.navigation.navigate('PersonalinfoScreen',{
+                type:type,
+            });
+            // props.navigation.navigate('CreateAccountasStudent',{
+            //     type:type,
+            // });
+      
+      
+          }
       }
 
    return <ScreenContainer  COLOR={"#F4F7FC"}  statBrColor={"#F4F7FC"}  BrStyle={"dark-content"}>

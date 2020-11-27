@@ -24,6 +24,8 @@ import MyClasses from '../screens/Classes/MyClasses';
 import MyMessages from '../screens/Messages/MyMessages';
 import ChatScreen from '../screens/Messages/ChatScreen';
 
+import PhoneNumberScreen from '../screens/PhoneVerificationScreen/PhoneNumberScreen';
+import PersonalinfoScreen from '../screens/CreateAccount/PersonalinfoScreen';
 
 
 const { Navigator, Screen } = createStackNavigator();
@@ -55,6 +57,8 @@ export default class UnAuthorizedNavigationStack extends React.Component {
       <Screen name="TodayAppointmentWithSelectedCourse" component={TodayAppointmentWithSelectedCourse} />
       <Screen name="MyMessages" component={MyMessages} />
       <Screen name="ChatScreen" component={ChatScreen} />
+      <Screen name="PhoneNumberScreen" component={PhoneNumberScreen} />
+      <Screen name="PersonalinfoScreen" component={PersonalinfoScreen} />
 
       
       

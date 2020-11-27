@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -13,6 +13,12 @@ import HeaderAuthScreen from "../../components/HeaderAuthScreen";
 import { useLinkProps } from "@react-navigation/native";
 
 function PhoneVerificationScreen(props) {
+
+  // let type = props.route.params.type;
+  const [type , setType] = useState(props.route.params.type);
+
+  console.log('phone otp screen  type is ',type);
+
 
   const [verificationNumbers, setVerificationNumbers] = React.useState([]);
   const [verifyButtonDisabled, setVerifyButtonDisabled] = React.useState(true);
@@ -36,8 +42,20 @@ function PhoneVerificationScreen(props) {
   }
 
   async function onPressVerifyButton() {
+    
 
-    props.navigation.navigate('StudentDashboard');
+    if(props.route.params.type == 'teacher'){
+      props.navigation.navigate('TeacherDashboard');
+      // props.navigation.navigate('CreateAccountasTeacher');
+
+
+    } else if(props.route.params.type == 'student'){
+      props.navigation.navigate('StudentDashboard');
+      // props.navigation.navigate('CreateAccountasStudent');
+
+
+    }
+
     
     
     // try {
@@ -78,7 +96,9 @@ function PhoneVerificationScreen(props) {
           </View>
       
           <View style={styles.reEnterMobileView}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=>{props.navigation.navigate('PhoneNumberScreen',{
+              type:type,
+            })}}>
               <Text style={styles.reEnterMobileText}>Enter Your Mobile Number</Text>
             </TouchableOpacity>
           </View>
@@ -131,10 +151,10 @@ function PhoneVerificationScreen(props) {
                 resizeMode="stretch"
                 source={Verify}
                 style={{ height: "100%", width: "100%", justifyContent: "center", opacity: verifyButtonDisabled ? 0.5 : 1 }}>
-                <Text
+                {/* <Text
                   style={styles.verifyTouchableOpacityText}>
                   Verify
-                </Text>
+                </Text> */}
               </ImageBackground>
             </TouchableOpacity>
           </View>
