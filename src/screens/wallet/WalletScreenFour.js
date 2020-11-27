@@ -14,7 +14,10 @@ const WalletScreenFour = (props) => {
     const [WalleToggle , setWalleToggle] = React.useState(false);
     const [WalleToggle2, setWalleToggle2] = React.useState(false);
 
+    const handleNavigation = () =>{
+        props.navigation.navigate('WalletScreenFive');
 
+    }
 
     return(
         <ScreenContainer COLOR={"#F4F7FC"}  statBrColor={"#F4F7FC"}  BrStyle={"dark-content"}>
@@ -38,12 +41,53 @@ const WalletScreenFour = (props) => {
                     <TouchableOpacity 
                         // onPress={ () => props.navigation.navigate('TodayAppointment')}
 
-                        onPress={ () => {}}
+                        onPress={ () => handleNavigation()}
                         style={styles.dropDown}>
                         <Text style={styles.credit}>Tokens to be converted or sent</Text>
                         <Ionicons name= "arrow-forward-circle-sharp" size={22} style={{marginRight:10}} color='#727C8E'/>
 
                     </TouchableOpacity>
+
+
+
+
+
+
+                    <TouchableOpacity 
+                        // onPress={ () => props.navigation.navigate('TodayAppointment')}
+
+                        onPress={ () => handleNavigation()}
+
+                        style={styles.dropDown}>
+                        <View style={{flex:2}}>
+                            <Text style={styles.credit}>Exchange your tokens to USDC (USD$) or other Cryptocurrency</Text>                        
+                        </View>
+    
+                        <View style={{flex:0.25}}>
+                            <Ionicons name= "arrow-forward-circle-sharp" size={22} style={{marginRight:10}} color='#727C8E'/>
+
+                        </View>
+
+                    </TouchableOpacity>
+
+
+                    <TouchableOpacity 
+                        // onPress={ () => props.navigation.navigate('TodayAppointment')}
+
+                        onPress={ () => handleNavigation()}
+                        style={styles.dropDown}>
+                        <View style={{flex:2}}>
+                            <Text style={styles.credit}>Cash-out your tokens to your local currency at a local ATM</Text>                        
+                        </View>
+    
+                        <View style={{flex:0.25}}>
+                            <Ionicons name= "arrow-forward-circle-sharp" size={22} style={{marginRight:10}} color='#727C8E'/>
+
+                        </View>
+
+                    </TouchableOpacity>
+
+                    
 
 
 

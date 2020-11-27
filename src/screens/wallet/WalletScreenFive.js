@@ -8,7 +8,7 @@ import Entypo from 'react-native-vector-icons/Entypo';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-const WalletScreenThree = (props) => {
+const WalletScreenFive = (props) => {
 
 
     const [WalleToggle , setWalleToggle] = React.useState(false);
@@ -36,37 +36,22 @@ const WalletScreenThree = (props) => {
             </View>
 
                     {/* <TouchableOpacity 
-                        onPress={ () => {props.navigation.navigate('WalletScreenFour')}}
+                        // onPress={ () => props.navigation.navigate('TodayAppointment')}
+
+                        onPress={ () => {}}
                         style={styles.dropDown}>
-                        <Text style={styles.credit}>Transfer tokens</Text>
+                        <Text style={styles.credit}>Tokens to be converted or sent</Text>
                         <Ionicons name= "arrow-forward-circle-sharp" size={22} style={{marginRight:10}} color='#727C8E'/>
+
                     </TouchableOpacity> */}
+                    <Text style={{...styles.credit,marginHorizontal:10,textAlign:'center',marginTop:15}}>Your tokens have been sent, converted, or cash-out</Text>
 
 
-                    <TouchableOpacity 
-                        onPress={ () => {props.navigation.navigate('WalletScreenFour')}}
-                        style={styles.dropDown}>
-                        <Text style={styles.credit}>Exchange tokens</Text>
-                        <Ionicons name= "arrow-forward-circle-sharp" size={22} style={{marginRight:10}} color='#727C8E'/>
 
-                    </TouchableOpacity>
 
-                    <TouchableOpacity 
-                        onPress={ () => {props.navigation.navigate('WalletScreenFour')}}
-                        style={styles.dropDown}>
-                        <Text style={styles.credit}>Send tokens</Text>
-                        <Ionicons name= "arrow-forward-circle-sharp" size={22} style={{marginRight:10}} color='#727C8E'/>
 
-                    </TouchableOpacity>
 
-                    <TouchableOpacity 
-                        onPress={ () => {props.navigation.navigate('WalletScreenFour')}}
-                        style={styles.dropDown}>
-                        <Text style={styles.credit}>Cash out tokens</Text>
-                        <Ionicons name= "arrow-forward-circle-sharp" size={22} style={{marginRight:10}} color='#727C8E'/>
-
-                    </TouchableOpacity>
-
+                 
 
 
             </View>
@@ -110,4 +95,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default WalletScreenThree;
+export default WalletScreenFive;
